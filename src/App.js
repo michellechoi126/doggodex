@@ -1,25 +1,31 @@
-import logo from './logo.svg';
+import { useState, useEffect } from 'react';
 import './App.css';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	const [dogFacts, setDogFacts] = useState([]);
+	
+  function getDogData() {
+			const url = `https://api.thedogapi.com/v1/breeds?api_key=${process.env.REACT_APP_API_KEY}`;
+			fetch(url)
+				.then((res) => res.json())
+				.then((data) => {
+					console.log('We have data!', data);
+					setDogFacts(data);
+				})
+				.catch(console.error);
+		}
+		
+	useEffect(() => {
+		getDogData();
+	}, []);
+
+	return (
+		<div className='App'>
+			<header>
+        Hello! This is the App Component.
+			</header>
+		</div>
+	);
 }
 
 export default App;
