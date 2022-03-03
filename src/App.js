@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import { DogContext } from './DogContext';
 import './App.css';
 import Header from './components/Header/Header';
 import DogDetails from './components/DogDetails/DogDetails';
 import DogsList from './components/DogsList/DogsList';
+import DogImages from './components/DogImages/DogImages';
 
 
 function App() {

@@ -49,9 +49,8 @@ function DogDetails(props) {
 
     return (
         <div>
-            <div>
-                <DogImages />
-            </div>
+            <DogImages id={dogDetails[0].id}/>
+            
             <div className="main-details">
                 <h1>{dogDetails[0].name}</h1>
                 <h3>Temperament: {dogDetails[0].temperament}</h3>

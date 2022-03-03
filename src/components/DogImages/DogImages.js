@@ -1,15 +1,33 @@
 import React from 'react';
-import { DogContext } from '../../DogContext';
-import { useContext } from 'react';
+import { useState, useEffect } from 'react';
 
 function DogImages(props) {
-    const { dogFacts, setDogFacts } = useContext(DogContext);
+    const id = props.id
 
-    https://api.thedogapi.com/v1/images/search?breed_id=2&limit=100&order=random&size=med
+    const [dogImages, setDogImages] = useState(null);
+
+    function getDogImages() {
+		const url = `https://api.thedogapi.com/v1/images/search?breed_id=${id}&limit=100&order=random&size=small`;
+		fetch(url)
+			.then((res) => res.json())
+			.then((data) => {
+				setDogImages(data);
+			})
+			.catch(console.error);
+	}
+    
+		
+	useEffect(() => {
+		getDogImages();
+	}, []);
+
+    if (dogImages === null) {
+		return <p>Loading Images...</p>
+	}
 
     return (
         <div>
-            
+            <img src={dogImages[0].url} alt={dogImages[0].breeds[0].name} />
         </div>
     );
 }
