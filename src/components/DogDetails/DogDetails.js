@@ -8,7 +8,7 @@ function DogDetails(props) {
     const [dogFacts, setDogFacts] = useState(null);
 	
 	function getDogData() {
-		const url = `https://api.thedogapi.com/v1/breeds?q=${name}`;
+		const url = `https://api.thedogapi.com/v1/breeds/search?q=${name}`;
 		fetch(url)
 			.then((res) => res.json())
 			.then((data) => {
@@ -27,7 +27,8 @@ function DogDetails(props) {
 
     return (
         <div>
-            <h1>Breed: {name}</h1>
+            <h1>Breed: {dogFacts[0].name}</h1>
+            <h3>Temperament: {dogFacts[0].temperament}</h3>
         </div>
     );
 }
