@@ -1,9 +1,34 @@
 import React from 'react';
+import { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 
 function DogDetails(props) {
+    const { name } = useParams();
+
+    const [dogFacts, setDogFacts] = useState(null);
+	
+	function getDogData() {
+		const url = `https://api.thedogapi.com/v1/breed?q=${name}`;
+		fetch(url)
+			.then((res) => res.json())
+			.then((data) => {
+				console.log('We have data!', data);
+				setDogFacts(data);
+			})
+			.catch(console.error);
+	}
+		
+	useEffect(() => {
+		getDogData();
+	}, []);
+
+	if (!dogFacts) {
+		return <p>Loading Doggodex...</p>
+	}
+
     return (
         <div>
-            This is the page to display individual Dog Details
+            <h1>Breed: {name}</h1>
         </div>
     );
 }

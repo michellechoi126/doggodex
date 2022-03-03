@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Routes, Route, Link, Navigate } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
+import { DogContext } from './DogContext';
 import './App.css';
 import Header from './components/Header/Header';
 import DogDetails from './components/DogDetails/DogDetails';
@@ -14,7 +15,6 @@ function App() {
 		fetch(url)
 			.then((res) => res.json())
 			.then((data) => {
-				console.log('We have data!', data);
 				setDogFacts(data);
 			})
 			.catch(console.error);
@@ -24,17 +24,23 @@ function App() {
 		getDogData();
 	}, []);
 
+	if (!dogFacts) {
+		return <p>Loading Doggodex...</p>
+	}
+
 	return (
 		<div className='App'>
-			<header>
-				<Header />
-			</header>
-			<main>
-				<Routes>
-					<Route path='/' element={<DogsList />} />
-					<Route path='' element={<DogDetails />} />
-				</Routes>
-			</main>
+			<DogContext.Provider value={{ dogFacts, setDogFacts }}>
+				<header>
+					<Header />
+				</header>
+				<main>
+					<Routes>
+						<Route path='/' element={<DogsList />} />
+						<Route path='/:name' element={<DogDetails />} />
+					</Routes>
+				</main>
+			</DogContext.Provider>
 		</div>
 	);
 }
