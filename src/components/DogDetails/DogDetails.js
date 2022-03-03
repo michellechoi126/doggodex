@@ -8,11 +8,10 @@ function DogDetails(props) {
     const [dogFacts, setDogFacts] = useState(null);
 	
 	function getDogData() {
-		const url = `https://api.thedogapi.com/v1/breed?q=${name}`;
+		const url = `https://api.thedogapi.com/v1/breeds?q=${name}`;
 		fetch(url)
 			.then((res) => res.json())
 			.then((data) => {
-				console.log('We have data!', data);
 				setDogFacts(data);
 			})
 			.catch(console.error);

@@ -1,19 +1,19 @@
 import React from 'react';
 import { DogContext } from '../../DogContext';
 import { useContext } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 function DogsList(props) {
-    const { name } = useParams();
 
     const { dogFacts, setDogFacts } = useContext(DogContext);
 
     return (
         <div>
             {dogFacts.map((element) => (
-                <Link to={`/${name}`} key={element.id}>
+                <Link to={`/${element.name}`} key={element.id}>
                     <div>
-                        <h3>{name}</h3>
+                        <img src={element.image.url} alt={element.name} />
+                        <h3>{element.name}</h3>
                     </div>
                 </Link>
             ))}
