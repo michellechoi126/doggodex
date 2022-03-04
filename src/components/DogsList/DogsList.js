@@ -9,12 +9,14 @@ function DogsList(props) {
     const { dogFacts, setDogFacts } = useContext(DogContext);
 
     return (
-        <div>
+        <div className="dogList-container">
             {dogFacts.map((element) => (
                 <Link to={`/${element.name}`} key={element.id}>
-                    <div className="container">
+                    <div className="dogList-card">
                         <img src={element.image.url} alt={element.name} className="dogImage"/>
-                        <h3>{element.name}</h3>
+                        <div className="dogListName-container">
+                            <h3 className="dogList-name">{element.name}</h3>
+                        </div>
                     </div>
                 </Link>
             ))}
