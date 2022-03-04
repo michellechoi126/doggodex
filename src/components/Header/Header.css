@@ -2,14 +2,13 @@
     box-sizing: border-box;
 }
 
-header {
-    max-height: 100px;
-}
-
 .header {
+    padding: 0;
+    margin: 0;
     background: pink;
     color: white;
     display: flex;
+    height: 12vh;
 }
 
 .logo-title {
@@ -33,7 +32,7 @@ header {
 }
 
 .logo-title:hover {
-    background: #aaaaaa;
+    filter: invert(100%);
 }
 
 

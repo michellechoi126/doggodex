@@ -29,19 +29,19 @@ function App() {
 	}
 
 	return (
-		<div className='App'>
-			<DogContext.Provider value={{ dogFacts, setDogFacts }}>
-				<header>
+		<DogContext.Provider value={{ dogFacts, setDogFacts }}>
+			<div className="App-container">
+				<header className="App-header">
 					<Header />
 				</header>
-				<main>
+				<main className="App-main">
 					<Routes>
 						<Route path='/' element={<DogsList />} />
 						<Route path='/:name' element={<DogDetails />} />
 					</Routes>
 				</main>
-			</DogContext.Provider>
-		</div>
+			</div>
+		</DogContext.Provider>
 	);
 }
 
