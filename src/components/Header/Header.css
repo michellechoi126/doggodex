@@ -1,0 +1,39 @@
+* {
+    box-sizing: border-box;
+}
+
+header {
+    max-height: 100px;
+}
+
+.header {
+    background: pink;
+    color: white;
+    display: flex;
+}
+
+.logo-title {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    height: 10vh;
+}
+
+.title {
+    height: 10vh;
+    color: white;
+    font-size: 3em;
+    text-decoration: none;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.logo-title:hover {
+    background: #aaaaaa;
+}
+
+

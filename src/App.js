@@ -5,7 +5,6 @@ import './App.css';
 import Header from './components/Header/Header';
 import DogDetails from './components/DogDetails/DogDetails';
 import DogsList from './components/DogsList/DogsList';
-import DogImages from './components/DogImages/DogImages';
 
 
 function App() {
