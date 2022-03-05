@@ -2,6 +2,8 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import DogImages from "../DogImages/DogImages";
+import "./DogDetails.css";
+
 
 function DogDetails(props) {
     const { name } = useParams();

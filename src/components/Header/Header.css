@@ -25,7 +25,6 @@
     height: 10vh;
     color: white;
     font-size: 3em;
-    text-decoration: none;
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -34,7 +33,3 @@
 .logo-title:hover {
     filter: invert(100%);
 }
-
-/* Link {
-    text-decoration: none;
-} */

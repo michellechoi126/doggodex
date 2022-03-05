@@ -1,5 +1,6 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
+import "./DogImages.css";
 
 function DogImages(props) {
     const id = props.id
@@ -27,7 +28,7 @@ function DogImages(props) {
 
     return (
         <div>
-            <img src={dogImages[0].url} alt={dogImages[0].breeds[0].name} />
+            <img src={dogImages[1].url} alt={dogImages[0].breeds[0].name} className="dogDetail-img"/>
         </div>
     );
 }

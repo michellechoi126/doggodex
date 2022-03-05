@@ -1,0 +1,8 @@
+* {
+    box-sizing: border-box;
+}
+
+.dogDetail-img {
+    max-width: 30%;
+    max-height: 30%;
+}
