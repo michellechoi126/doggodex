@@ -1,8 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+
 * {
     box-sizing: border-box;
 }
 
-.dogDetail-img {
-    width: 30%;
-    height: 30%;
+.dogDetails-container {
+    display: flex;
+    background-color: rgb(247, 150, 234);
+    margin: 0 2rem;
+    padding: 2rem;
+    border: 1px solid black;
+    border-right: 15px groove rgb(155, 47, 140);
+    border-bottom: 15px groove rgb(155, 47, 140);
+    border-radius: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.knobs {
+    margin: 1rem;
+    width: 50%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.knobs-container {
+    padding: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    min-height: 10%;
+}
+
+.redlight div {
+    font-size: 2rem;
+}
+
+.longKnobs {
+    margin-top: .5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.longKnobs div {
+    width: 6rem;
+    margin: .2rem;
+    padding-right: .8rem;
+    padding-left: .8rem;
+    border: 1px solid black;
+    border-radius: 2rem;
+    font-size: .5rem;
+    background-color: rgb(175, 175, 172);
+}
+
+.longKnob2 {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.img-name {
+    border: 2px solid rgb(75, 74, 74);
+    border-radius: 1rem;
+    padding: 5%;
+    min-width: 100px;
+    max-width: 35rem;
+    max-height: 38rem;
+    background-color: rgb(212, 212, 212);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.dogDetails-img {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 85%;
+}
+
+.dogDetails-name {
+    margin: .5rem auto .5rem 0;
+    padding: 1rem;
+    width: 60%;
+    border: 2px inset rgb(74, 92, 80);
+    display: flex;
+    justify-content: center;
+    background-color: green;
+    font-family: 'Press Start 2P', cursive;
+    font-size: .4rem;
+    text-align: center;
+}
+
+.bottom-imgName {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.heart {
+    margin-right: 3rem;
+    display: flex;
+    align-items: center;
+    font-size: 3rem;
+    color: rgb(185, 127, 137);
+}
+
+hr {
+    margin: 2rem;
+}
+
+.details-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 40rem;
+}
+
+.more-details {
+    height: 30rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.main-details {
+    padding: 1rem;
+    margin: 2rem;
+    max-width: 35rem;
+    min-height: 8rem;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    border: 2px solid black;
+    background-color: rgb(54, 54, 54);
+    color: white;
+    font-family: 'VT323', monospace;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.buttons-container {
+    margin: 3rem 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.details-buttons {
+    margin: 0;
+    padding: 1rem;
+    border: 2px solid rgb(0, 0, 0);
+    background-color: aqua;
+    font-family: 'VT323', monospace;
+    font-size: 1.5rem;
+    transition: .2s ease-in-out;
+}
+
+.details-button:hover {
+    background-color: rgba(255, 30, 0, 0.377);
+}
+
+.weight-height {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.weight {
+    padding: 1rem;
+    margin: 1rem;
+    max-width: 17rem;
+    border: 2px solid black;
+    background-color: rgb(54, 54, 54);
+    color: white;
+    font-family: 'Press Start 2P', cursive;
+    font-size: .6rem;
+    text-align: center;
+    line-height: 2em;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+}
+
+.height {
+    padding: 1rem;
+    margin: 1rem;
+    max-width: 17rem;
+    border: 2px solid black;
+    background-color: rgb(54, 54, 54);
+    color: white;
+    font-family: 'Press Start 2P', cursive;
+    font-size: .6rem;
+    text-align: center;
+    line-height: 2em;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
 }
