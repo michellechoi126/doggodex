@@ -92,6 +92,19 @@ function DogDetails(props) {
                             bred for</button>
                     </div>
                 </div>
+                <div className="midSection-decor">
+                    <div className="leftSide-decor">
+                        <div>.</div>
+                        <div>.</div>
+                    </div>
+                    <div className="rightSide-decor">
+                        <div className="details-decor">
+                                <div> . </div>
+                                <div> . </div>
+                        </div>
+                        <div className="yellowLight">🟡</div>
+                    </div>
+                </div>
                 <div className="weight-height">
                     <div className="weight">
                         <h3>Weight: {dogDetails[0].weight.imperial} lbs</h3>
