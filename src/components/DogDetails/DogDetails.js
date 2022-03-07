@@ -8,6 +8,10 @@ import "./DogDetails.css";
 function DogDetails(props) {
     const { name } = useParams();
 
+    const types = ["TEMPERAMENT", "LIFESPAN", "ORIGIN", "BREEDGROUP", "BREDFOR"];
+
+    const [index, setIndex] = useState(0)
+
     const [dogDetails, setDogDetails] = useState(null);
 	
 	function getDogData() {
@@ -36,18 +40,39 @@ function DogDetails(props) {
     function detailButtons(state, detail) {
         switch(detail.type) {
             case "TEMPERAMENT":
+                // setIndex(0);
                 return <h3>Temperament: {dogDetails[0].temperament}</h3>;
             case "ORIGIN":
+                // setIndex(2);
                 return <h3>Origin: {(dogDetails[0].origin) ? (dogDetails[0].origin) : "unknown"}</h3>;
             case "BREDFOR":
+                // setIndex(4);
                 return <h3>Bred for: {(dogDetails[0].bred_for) ? (dogDetails[0].bred_for) : "unknown"}</h3>;
             case "BREEDGROUP":
+                // setIndex(3);
                 return <h3>Breed group: {(dogDetails[0].breed_group) ? (dogDetails[0].breed_group) : "unknown"}</h3>;
             case "LIFESPAN":
+                // setIndex(1);
                 return <h3>Average life span: {dogDetails[0].life_span}</h3>;
             default:
+                // setIndex(0);
                 return state;
         }
+    }
+
+    function handleNext() {
+        // if (display !== "please click on the detail button below, you would to know more about.") {
+        //     setIndex()
+        // }
+        (index<4 ? setIndex(previousState => {
+            dispatch ({type: types[previousState + 1]})
+            return (previousState + 1)
+        }) : setIndex(previousState => {
+            dispatch ({type: types[0]})
+            return 0
+        }))
+        // dispatch({type: types[index]})
+        console.log(index, {display});
     }
 
 	if (dogDetails === null) {
@@ -87,22 +112,37 @@ function DogDetails(props) {
                         {display}
                     </div >
                     <div className="buttons-container">
-                        <button className="details-buttons" onClick={() => dispatch({ type: "TEMPERAMENT"})}>
+                        <button className="details-buttons" onClick={() => {
+                            setIndex(0)
+                            dispatch({ type: "TEMPERAMENT"})
+                            }}>
                             temperament</button>
-                        <button className="details-buttons" onClick={() => dispatch({ type: "LIFESPAN"})}>
+                        <button className="details-buttons" onClick={() => {
+                            setIndex(1)
+                            dispatch({ type: "LIFESPAN"})
+                        }}>
                             life span</button>
-                        <button className="details-buttons" onClick={() => dispatch({ type: "ORIGIN"})}>
+                        <button className="details-buttons" onClick={() => {
+                            setIndex(2)
+                            dispatch({ type: "ORIGIN"})
+                        }}>
                             origin</button>
-                        <button className="details-buttons" onClick={() => dispatch({ type: "BREEDGROUP"})}>
+                        <button className="details-buttons" onClick={() => {
+                            setIndex(3)
+                            dispatch({ type: "BREEDGROUP"})
+                        }}>
                             breed group</button>
-                        <button className="details-buttons" onClick={() => dispatch({ type: "BREDFOR"})}>
+                        <button className="details-buttons" onClick={() => {
+                            setIndex(4)
+                            dispatch({ type: "BREDFOR"})
+                        }}>
                             bred for</button>
                     </div>
                 </div>
                 <div className="midSection-decor">
                     <div className="leftSide">
                         <button className="back" role="img" aria-label="back button">◀︎</button>
-                        <button className="next" role="img" aria-label="next button">▶︎</button>
+                        <button className="next" role="img" aria-label="next button" onClick={handleNext}>▶︎</button>
                     </div>
                     <div className="rightSide-decor">
                         <div className="details-decor">
