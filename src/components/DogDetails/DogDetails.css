@@ -64,7 +64,7 @@
 }
 
 .img-name {
-    margin: auto;
+    margin: auto 1rem;
     border: 2px solid rgb(75, 74, 74);
     border-radius: 1rem;
     padding: 5%;
