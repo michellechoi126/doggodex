@@ -23,7 +23,14 @@ function DogDetails(props) {
 	useEffect(() => {
 		getDogData();
 	}, []);
-    
+
+    const [faveHeart, setFaveHeart] = useState(<span role="img" aria-label="heart" >♡</span>)
+    function favorite(event) {
+        return (
+            setFaveHeart(<span role="img" aria-label="heart" >♥︎</span>)
+        )
+    }
+
     const [display, dispatch] = useReducer(detailButtons, "please click on the detail button below, you would to know more about.");
 
     function detailButtons(state, detail) {
@@ -70,7 +77,7 @@ function DogDetails(props) {
                     <div className="dogDetails-name">
                         <h1>{dogDetails[0].name}</h1>
                     </div>
-                    <div className="heart" role="img" aria-label="heart">♡</div>
+                    <button className="heart" onClick={favorite}>{faveHeart}</button>
                 </div>
             </div>
             <hr />
