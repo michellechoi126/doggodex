@@ -36,7 +36,7 @@
     min-height: 10%;
 }
 
-.redlight div {
+.redlight div{
     font-size: 2rem;
 }
 
@@ -161,7 +161,6 @@ hr {
     background-color: aqua;
     font-family: 'VT323', monospace;
     font-size: 1.5rem;
-    transition: .2s ease-in-out;
 }
 
 .details-button:hover {
@@ -173,19 +172,35 @@ hr {
     justify-content: space-between;
 }
 
-.leftSide-decor {
+.leftSide {
     margin: 2rem;
     display: flex;
     align-items: center;
     height: 5rem;
 }
 
-.leftSide-decor div {
+.leftSide button {
     width: 6rem;
-    height: 3rem;
+    height: 4rem;
     border: 2px solid black;
     background-color: rgb(255, 255, 255);
-    color: rgb(255, 255, 255);
+}
+
+.back {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3em;
+    color: aqua;
+}
+
+.next {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3em;
+    color: aqua;
+    text-align: center;
 }
 
 .rightSide-decor {

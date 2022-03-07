@@ -51,26 +51,26 @@ function DogDetails(props) {
         <div className="dogDetails-container">
             <div className="img-name">
                 <div className="knobs">
-                    <div>🔘</div>
-                    <div>🔘</div>
+                    <div role="img" aria-label="decorative knobs">🔘</div>
+                    <div role="img" aria-label="decorative knobs">🔘</div>
                 </div>
                 <div className="dogDetails-img">
                     <DogImages id={dogDetails[0].id}/>
                 </div>
                 <div className="knobs-container">
                     <div className="redlight">
-                        <div>🔴</div>
+                        <div role="img" aria-label="redlight decor">🔴</div>
                     </div>
                     <div className="longKnobs">
-                        <div className="longKnob1">🔘</div>
-                        <div className="longKnob2">🔘</div>
+                        <div className="longKnob1" role="img" aria-label="decorative knobs">🔘</div>
+                        <div className="longKnob2" role="img" aria-label="decorative knobs">🔘</div>
                     </div>
                 </div>
                 <div className="bottom-imgName">
                     <div className="dogDetails-name">
                         <h1>{dogDetails[0].name}</h1>
                     </div>
-                    <div className="heart">♡</div>
+                    <div className="heart" role="img" aria-label="heart">♡</div>
                 </div>
             </div>
             <hr />
@@ -93,16 +93,16 @@ function DogDetails(props) {
                     </div>
                 </div>
                 <div className="midSection-decor">
-                    <div className="leftSide-decor">
-                        <div>.</div>
-                        <div>.</div>
+                    <div className="leftSide">
+                        <button className="back" role="img" aria-label="back button">◀︎</button>
+                        <button className="next" role="img" aria-label="next button">▶︎</button>
                     </div>
                     <div className="rightSide-decor">
                         <div className="details-decor">
-                                <div> . </div>
-                                <div> . </div>
+                                <div role="img" aria-label="decorative knobs"> . </div>
+                                <div role="img" aria-label="decorative knobs"> . </div>
                         </div>
-                        <div className="yellowLight">🟡</div>
+                        <div className="yellowLight" role="img" aria-label="decorative yellow light">🟡</div>
                     </div>
                 </div>
                 <div className="weight-height">
