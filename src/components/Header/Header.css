@@ -11,6 +11,9 @@
     color: white;
     display: flex;
     height: 12vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .logo-title {
@@ -36,4 +39,9 @@
 
 .logo-title:hover {
     filter: invert(100%);
+}
+
+.search {
+    margin-right: 2rem;
+    font-size: 2rem;
 }
