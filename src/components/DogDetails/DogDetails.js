@@ -40,30 +40,21 @@ function DogDetails(props) {
     function detailButtons(state, detail) {
         switch(detail.type) {
             case "TEMPERAMENT":
-                // setIndex(0);
                 return <h3>Temperament: {dogDetails[0].temperament}</h3>;
             case "ORIGIN":
-                // setIndex(2);
                 return <h3>Origin: {(dogDetails[0].origin) ? (dogDetails[0].origin) : "unknown"}</h3>;
             case "BREDFOR":
-                // setIndex(4);
                 return <h3>Bred for: {(dogDetails[0].bred_for) ? (dogDetails[0].bred_for) : "unknown"}</h3>;
             case "BREEDGROUP":
-                // setIndex(3);
                 return <h3>Breed group: {(dogDetails[0].breed_group) ? (dogDetails[0].breed_group) : "unknown"}</h3>;
             case "LIFESPAN":
-                // setIndex(1);
                 return <h3>Average life span: {dogDetails[0].life_span}</h3>;
             default:
-                // setIndex(0);
                 return state;
         }
     }
 
     function handleNext() {
-        // if (display !== "please click on the detail button below, you would to know more about.") {
-        //     setIndex()
-        // }
         (index<4 ? setIndex(previousState => {
             dispatch ({type: types[previousState + 1]})
             return (previousState + 1)
@@ -71,7 +62,6 @@ function DogDetails(props) {
             dispatch ({type: types[0]})
             return 0
         }))
-        // dispatch({type: types[index]})
         console.log(index, {display});
     }
 
