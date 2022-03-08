@@ -7,7 +7,7 @@
 .header {
     padding: 0;
     margin: 0;
-    background: pink;
+    background-image: linear-gradient(to left, rgba(255, 0, 0, 0), pink);
     color: white;
     display: flex;
     height: 12vh;

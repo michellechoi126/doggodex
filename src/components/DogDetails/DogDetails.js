@@ -65,6 +65,17 @@ function DogDetails(props) {
         console.log(index, {display});
     }
 
+    function handleBack() {
+        (index>0 ? setIndex(previousState => {
+            dispatch ({type: types[previousState - 1]})
+            return (previousState - 1)
+        }) : setIndex(previousState => {
+            dispatch ({type: types[4]})
+            return 4
+        }))
+        console.log(index, {display});
+    }
+
 	if (dogDetails === null) {
 		return <p>Loading Doggodex...</p>
 	}
@@ -72,20 +83,22 @@ function DogDetails(props) {
     return (
         <div className="dogDetails-container">
             <div className="img-name">
-                <div className="knobs">
-                    <div role="img" aria-label="decorative knobs">🔘</div>
-                    <div role="img" aria-label="decorative knobs">🔘</div>
-                </div>
-                <div className="dogDetails-img">
-                    <DogImages id={dogDetails[0].id}/>
-                </div>
-                <div className="knobs-container">
-                    <div className="redlight">
-                        <div role="img" aria-label="redlight decor">🔴</div>
+                <div className="image-container">
+                    <div className="knobs">
+                        <div role="img" aria-label="decorative knobs">🔘</div>
+                        <div role="img" aria-label="decorative knobs">🔘</div>
                     </div>
-                    <div className="longKnobs">
-                        <div className="longKnob1" role="img" aria-label="decorative knobs">🔘</div>
-                        <div className="longKnob2" role="img" aria-label="decorative knobs">🔘</div>
+                    <div className="dogDetails-img">
+                        <DogImages id={dogDetails[0].id}/>
+                    </div>
+                    <div className="knobs-container">
+                        <div className="redlight">
+                            <div role="img" aria-label="redlight decor">🔴</div>
+                        </div>
+                        <div className="longKnobs">
+                            <div className="longKnob1" role="img" aria-label="decorative knobs">🔘</div>
+                            <div className="longKnob2" role="img" aria-label="decorative knobs">🔘</div>
+                        </div>
                     </div>
                 </div>
                 <div className="bottom-imgName">
@@ -131,7 +144,7 @@ function DogDetails(props) {
                 </div>
                 <div className="midSection-decor">
                     <div className="leftSide">
-                        <button className="back" role="img" aria-label="back button">◀︎</button>
+                        <button className="back" role="img" aria-label="back button" onClick={handleBack}>◀︎</button>
                         <button className="next" role="img" aria-label="next button" onClick={handleNext}>▶︎</button>
                     </div>
                     <div className="rightSide-decor">
