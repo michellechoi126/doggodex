@@ -16,7 +16,6 @@ function DogImages(props) {
 			})
 			.catch(console.error);
 	}
-    
 		
 	useEffect(() => {
 		getDogImages();
